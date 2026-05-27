@@ -1,53 +1,684 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My Site</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .container {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            text-align: center;
-            max-width: 600px;
-        }
-        h1 {
-            color: #333;
-            margin: 0 0 10px 0;
-        }
-        p {
-            color: #666;
-            line-height: 1.6;
-        }
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background: #667eea;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-    </style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CJP Tamilnadu</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#F8F3E8;
+    color:#111;
+    overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+.navbar{
+    width:100%;
+    background:#111;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo-text{
+    color:white;
+    font-size:32px;
+    font-weight:800;
+}
+
+.logo-text span{
+    color:#1B5E20;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    margin-left:25px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#F57C00;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
+    url('https://c.files.bbci.co.uk/33ba/live/56002b70-56bf-11f1-89a3-d1f559421220.jpg');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    color:white;
+    padding:60px 10%;
+}
+
+.hero img{
+    width:220px;
+    height:220px;
+    object-fit:cover;
+    border-radius:50%;
+    border:6px solid white;
+    margin-bottom:30px;
+    background:white;
+    box-shadow:0 0 30px rgba(255,255,255,.3);
+}
+
+.hero h1{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:95px;
+    letter-spacing:4px;
+}
+
+.hero h2{
+    font-size:28px;
+    color:#F57C00;
+    margin-top:10px;
+}
+
+.hero p{
+    max-width:900px;
+    margin-top:25px;
+    line-height:2;
+    font-size:18px;
+}
+
+.hero-btns{
+    margin-top:40px;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 35px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:700;
+    margin:10px;
+    transition:.3s;
+}
+
+.btn-orange{
+    background:#F57C00;
+    color:white;
+}
+
+.btn-green{
+    background:#1B5E20;
+    color:white;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+}
+
+/* SECTIONS */
+
+.section{
+    padding:100px 10%;
+}
+
+.section-title{
+    font-size:60px;
+    font-family:'Bebas Neue',sans-serif;
+    margin-bottom:30px;
+    letter-spacing:2px;
+}
+
+.section p{
+    font-size:18px;
+    line-height:2;
+    margin-bottom:20px;
+}
+
+.dark{
+    background:#111;
+    color:white;
+}
+
+.dark .section-title{
+    color:#F57C00;
+}
+
+/* QUOTE BOX */
+
+.quote-box{
+    font-style:italic;
+    background:#f1f1f1;
+    padding:25px;
+    border-left:6px solid #F57C00;
+    border-radius:10px;
+    margin:30px 0;
+}
+
+.green-box{
+    border-left:6px solid #1B5E20;
+}
+
+/* AGENDA */
+
+.agenda-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    margin-top:50px;
+}
+
+.agenda-card{
+    background:white;
+    color:#111;
+    padding:35px;
+    border-radius:20px;
+    border-top:8px solid #F57C00;
+    transition:.4s;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+.agenda-card:hover{
+    transform:translateY(-10px);
+}
+
+.agenda-card h3{
+    color:#1B5E20;
+    margin-bottom:15px;
+    font-size:28px;
+}
+
+/* PEOPLE SECTION */
+
+.people-box{
+    background:#1B5E20;
+    color:white;
+    padding:45px;
+    border-radius:25px;
+    margin-top:40px;
+}
+
+.people-box h3{
+    color:#F57C00;
+    font-size:35px;
+    margin-bottom:15px;
+    margin-top:20px;
+}
+
+/* BRANCH SCROLL */
+
+.scroll-container{
+    overflow:hidden;
+    width:100%;
+    margin-top:40px;
+    background:#1B1B1B;
+    padding:25px 0;
+    border-radius:20px;
+}
+
+.scroll-text{
+    display:flex;
+    gap:70px;
+    width:max-content;
+    animation:scrollMove 25s linear infinite;
+}
+
+.scroll-text span{
+    font-size:30px;
+    font-weight:800;
+    color:#F57C00;
+    white-space:nowrap;
+    font-family:'Bebas Neue',sans-serif;
+    letter-spacing:2px;
+}
+
+@keyframes scrollMove{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-50%);
+    }
+}
+
+/* SOCIAL */
+
+.social-box{
+    margin-top:50px;
+    background:white;
+    color:#111;
+    padding:40px;
+    border-radius:20px;
+}
+
+.social-box h3{
+    color:#F57C00;
+    margin-bottom:15px;
+    font-size:28px;
+}
+
+.social-box a{
+    color:#1B5E20;
+    font-weight:700;
+    text-decoration:none;
+}
+
+/* FOOTER */
+
+.footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:100px 10%;
+}
+
+.footer h1{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:70px;
+    color:#F57C00;
+    margin-bottom:30px;
+}
+
+.footer p{
+    line-height:2;
+    max-width:900px;
+    margin:auto;
+    margin-bottom:20px;
+    font-size:18px;
+}
+
+.signature{
+    margin-top:40px;
+    color:#1B5E20;
+    font-size:30px;
+    font-weight:800;
+}
+
+.quote{
+    margin-top:25px;
+    font-style:italic;
+    color:#ccc;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:55px;
+}
+
+.hero img{
+    width:160px;
+    height:160px;
+}
+
+.section-title{
+    font-size:42px;
+}
+
+.nav-links{
+    display:none;
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
-    <div class="container">
-        <h1>🎉 Welcome to My Site!</h1>
-        <p>This is my first website hosted on GitHub Pages.</p>
-        <p>You can now edit this file and add more pages to your site.</p>
-        <a href="#" class="btn">Get Started</a>
-    </div>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo-text">
+CJP <span>TAMILNADU</span>
+</div>
+
+<div class="nav-links">
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Agenda</a>
+<a href="#">Branches</a>
+<a href="#">Contact</a>
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<img src="1000077335.png" alt="CJP Logo">
+
+<h1>COCKROACH JANTA PARTY</h1>
+
+<h2>Tamilnadu People's Movement</h2>
+
+<p>
+A movement born from survival, resistance, satire, and fearless public voice.
+Built by ordinary people for extraordinary change across Tamil Nadu.
+</p>
+
+<div class="hero-btns">
+
+<a href="#" class="btn btn-orange">JOIN CJP</a>
+
+<a href="#" class="btn btn-green">READ MANIFESTO</a>
+
+</div>
+
+</section>
+
+<!-- ORIGIN -->
+
+<section class="section">
+
+<h1 class="section-title">THE ORIGIN OF CJP</h1>
+
+<p>
+During a Supreme Court hearing on 15 May 2026 regarding a contempt petition related to senior advocate designations and the use of fraudulent professional credentials, Chief Justice Surya Kant remarked:
+</p>
+
+<div class="quote-box">
+“There are youngsters like cockroaches, who don't get any employment or have any place in the profession. Some of them become media, some of them become social media, RTI activists, and other activists, and they start attacking everyone.”
+</div>
+
+<p>
+The following day, Abhijeet Dipke announced the launch of a platform for all the “cockroaches” out there, describing it as a voice for unemployed, chronically online, outspoken youth who were tired of being ignored.
+</p>
+
+<p>
+The Cockroach Janta Party (CJP) website officially launched on 16 May under the tagline:
+<strong>“Voice of the Lazy & Unemployed.”</strong>
+</p>
+
+<p>
+Artificial intelligence tools such as ChatGPT and Claude were used to build the website, manifesto, graphics, and digital campaign identity.
+</p>
+
+<p>
+The movement spread rapidly across social media platforms and became one of the fastest-growing youth-driven digital campaigns in India.
+</p>
+
+<p>
+Supporters organised online campaigns, offline protests, public discussions, awareness drives, and community activities across multiple Indian states.
+</p>
+
+<p>
+Following the backlash, Chief Justice Surya Kant later clarified that his comments were directed specifically toward individuals using fake professional degrees and not unemployed youth in general.
+</p>
+
+<div class="quote-box green-box">
+“A political front of the youth, by the youth, for the youth — Secular, Socialist, Democratic, and Lazy.”
+</div>
+
+<p>
+The movement states clearly that it is not interested in becoming a traditional political party controlled by career politicians.
+Instead, it positions itself as a digital-age public movement driven by satire, criticism, accountability, creativity, and youth participation.
+</p>
+
+<div class="quote-box">
+“We are here to ask, loudly, repeatedly, in writing — where the money went.”
+</div>
+
+<div class="quote-box green-box">
+“Build a movement for young people who keep getting called lazy, chronically online, and cockroaches. The rest is satire.”
+</div>
+
+</section>
+
+<!-- JUSTICE -->
+
+<section class="section dark">
+
+<h1 class="section-title">WHY JUSTICE NEEDED A NEW VOICE</h1>
+
+<p>
+For years, people watched systems fail silently.
+Electricity crises.
+Rising costs.
+Empty promises.
+Political drama without public progress.
+</p>
+
+<p>
+The founders of CJP believed that true justice is not delivered in speeches —
+it is delivered through accountability, courage, and public action.
+</p>
+
+<p>
+The movement began as a symbolic rebellion against corruption and negligence.
+</p>
+
+</section>
+
+<!-- MOTIVE -->
+
+<section class="section">
+
+<h1 class="section-title">OUR MOTIVE</h1>
+
+<p>
+Cockroach Janta Party exists for one reason:
+To challenge silence.
+</p>
+
+<p>
+CJP believes politics should not belong only to the powerful.
+It should belong to students, workers, creators, and ordinary citizens.
+</p>
+
+<ul style="line-height:2.3; font-size:18px; padding-left:25px;">
+
+<li>Speak against public issues</li>
+<li>Empower youth voices</li>
+<li>Expose corruption</li>
+<li>Encourage political awareness</li>
+<li>Build fearless public discussion</li>
+
+</ul>
+
+</section>
+
+<!-- AGENDA -->
+
+<section class="section dark">
+
+<h1 class="section-title">THE CJP FIVE-POINT AGENDA</h1>
+
+<div class="agenda-container">
+
+<div class="agenda-card">
+<h3>1. Judicial Neutrality</h3>
+<p>
+CJP believes judicial independence must remain untouched by political influence.
+</p>
+</div>
+
+<div class="agenda-card">
+<h3>2. Protect Every Vote</h3>
+<p>
+Democracy survives only when every citizen’s legitimate vote is protected.
+</p>
+</div>
+
+<div class="agenda-card">
+<h3>3. Equal Representation</h3>
+<p>
+Women deserve equal participation in governance and leadership.
+</p>
+</div>
+
+<div class="agenda-card">
+<h3>4. Independent Media</h3>
+<p>
+Democracy needs fearless journalism that questions power instead of serving it.
+</p>
+</div>
+
+<div class="agenda-card">
+<h3>5. Anti-Defection Reform</h3>
+<p>
+Political defections weaken democracy and betray public trust.
+</p>
+</div>
+
+</div>
+
+</section>
+!-- ABOUT TN CJP -->
+
+<section class="section">
+
+<h1 class="section-title">ABOUT TAMILNADU CJP</h1>
+
+<p>
+Tamilnadu CJP is not a party controlled by powerful families, money, or political dynasties.
+It is a people’s movement.
+</p>
+
+<div class="people-box">
+
+<h3>People Are The Heads</h3>
+
+<p>
+Leadership does not belong to a single person.
+CJP believes true power belongs to the citizens.
+</p>
+
+<h3>People Are The Candidates</h3>
+
+<p>
+Politics should be accessible to ordinary people, students, workers, creators, women, and youth.
+</p>
+
+<h3>People Are The Voice</h3>
+
+<p>
+Every issue matters.
+Every opinion matters.
+Every citizen matters.
+</p>
+
+</div>
+
+</section>
+
+<!-- BRANCHES -->
+
+<section class="section dark">
+
+<h1 class="section-title">CJP DISTRICT BRANCHES</h1>
+
+<p style="font-size:20px; margin-bottom:30px;">
+The movement continues to grow across Tamil Nadu through people-powered district branches.
+</p>
+
+<div class="scroll-container">
+
+<div class="scroll-text">
+
+<span>CJP SALEM</span>
+<span>CJP CHENNAI</span>
+<span>CJP COIMBATORE</span>
+<span>CJP MADURAI</span>
+<span>CJP ERODE</span>
+<span>CJP TIRUPPUR</span>
+<span>CJP NAMAKKAL</span>
+<span>CJP DHARMAPURI</span>
+<span>CJP KARUR</span>
+<span>CJP VELLORE</span>
+<span>CJP KANYAKUMARI</span>
+<span>CJP TIRUNELVELI</span>
+
+</div>
+
+</div>
+
+<div class="social-box">
+
+<h3>Tamilnadu CJP</h3>
+
+<p>📱 WhatsApp Community: <a href="https://chat.whatsapp.com/JP9hRWfDEF16GUxE1xrecv?mode=gi_t">Whatsapp Group</a></p>
+
+<p>📸 Instagram Page: <a href="">Instagram Page</a></p>
+
+<br>
+
+<h3>CJP SALEM</h3>
+
+<p>📱 WhatsApp Group: <a href="https://chat.whatsapp.com/JP9hRWfDEF16GUxE1xrecv?mode=gi_t">Whatsapp Group</a></p>
+
+<p>📸 Instagram Page: <a href="https://www.instagram.com/cjp4salem?igsh=eDVyaWZpeTE3cngx">Instagram Page</a></p>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<h1>THANK YOU TAMIL NADU</h1>
+
+<p>
+Thank you for believing in a movement built not on power —
+but on people.
+</p>
+
+<p>
+Thank you for raising your voice.
+Thank you for questioning.
+Thank you for refusing silence.
+</p>
+
+<p>
+Every share,
+every discussion,
+every criticism,
+every supporter —
+helped this movement grow stronger.
+</p>
+
+<div class="signature">
+— Sugesh | CJP SALEM
+</div>
+
+<div class="quote">
+“When people become the movement, no system can silence them.”
+</div>
+
+</footer>
+
+</body>
+</html>
+
 </body>
 </html>
